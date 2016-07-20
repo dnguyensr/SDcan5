@@ -8,7 +8,7 @@ gem 'pg', '~> 0.18'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Devise to handle user authentication
-gem 'devise', '3.5.10'
+gem 'devise'
 # dotenv to load env file
 gem 'dotenv-rails'
 # Use Faker to generate content
