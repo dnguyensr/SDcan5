@@ -1,0 +1,14 @@
+language: ruby
+cache: bundler
+rvm:
+  - 2.2.4
+services:
+  - postgresql
+env:
+  - DB=postgresql
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
