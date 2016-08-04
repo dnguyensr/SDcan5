@@ -9,6 +9,8 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
 # Devise to handle user authentication
 gem 'devise'
+# Omniauth-facebook for fb authentication
+gem 'omniauth-facebook'
 # dotenv to load env file
 gem 'dotenv-rails'
 # Use Faker to generate content
