@@ -7,6 +7,9 @@ services:
 before_script:
     - psql -c 'create database travis_ci_test;' -U postgres
     - psql -c 'create database SDcan5_test;' -U postgres
+env:
+  global:
+    - secure: "N0R8p097jjNHxQOfJB6Gpn42rg+8+umKgFeQzhrf7AA+C43iXOPM4wWc0YMzaA/rK/oe/WznQS7CX6+S2EC8MO5nymq+GRpFVATUFzq4PtriHBR6PrwueWOzgzGhDCd5djCtJDSmnsHjeUP/zBpQoTFV17B/ZF3ZOFSrPA5lYrxcwIhxJYJCOQhPVJL6FSIqz3hFoO+50k3Qlt/Qpgd83uLZDVZmN/tJ6uBxx4QfE+HQHvR+MuFc3QEaeJdKFXiFXyFJENAh4kmI/U+7R6JsgK5PQpAg5E+b8PLl2+rZDXUl6ZkHifvZG4pyHZGd5XModxBZi7lnlZWn4W9ioG0YI/kbbfb6q5BPimKZsilxJi9TRaiAikUxFXMaEqF4ZGDmFSobC+6PXgxsmcisctaOt6Fd3zM54eJMPw6kg0nC2rOZ0uFzKEquObazasEY+kJzRgZ66Jc54nGyQr7IlFGur1vfcvsOFyB8juC67WaiE80olScd6ezrynyOR2peMHgrUUIqP/DsusW06yagc4h1z1hg2WV3NL4LeT5FDZdod9caFbebqHerZhHr9hz2S0gHmUUx7/tBHNrMr1B6ksXdiyM7B6EPYMqbhZrk86RF5PyueBeK5hveXWbfZT63j92EQ8vsEAfyQD1EXHMsW4tWstrecUy0XcMxmHv6+A7hh7c="
 script:
   - bundle exec rake db:test:prepare
   - bundle exec rspec spec/
