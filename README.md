@@ -13,3 +13,12 @@ SDcan seeks to create localized communities with curated organizations that conn
 * Users can join events and service projects as volunteers
 * Users can reach organizations to donate
 * Organizers can add events
+
+***
+
+## To Do
+* Add admin attribute to users
+* Write tests for users
+* Add approved organizers to organizations
+* Rewrite tests for organizations index
+* Write tests for organizations controller
