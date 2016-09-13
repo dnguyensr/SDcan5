@@ -3,14 +3,59 @@
   <head>
     <title>SDcan5</title>
     <%= csrf_meta_tags %>
+    <script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <nav>
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo right">Logo</a>
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <li><a href="badges.html">Volunteer</a></li>
+          <li><a href="collapsible.html">Donate</a></li>
+          <li><a href="#">About Us</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="container">
     <%= yield %>
+    </div>
+
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <!-- <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div> -->
+          <div class="col l4 offset-0 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Volunteer</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Donate</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">About Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        2016 SDCan5
+        <a class="grey-text text-lighten-4 right" href="#!">Sitemap</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

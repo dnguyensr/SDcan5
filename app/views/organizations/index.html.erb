@@ -2,6 +2,27 @@
 
 <h1>Organizations</h1>
 
+<% @organizations.each do |organization| %>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+              <span class="card-title"><%= organization.name%></span>
+              <p><%= organization.description%></p>
+              <p>Focus: </p>
+            </div>
+            <div class="card-action">
+              <a href="/organizations/<%= organization.id %>">More info</a>
+              <a href="<%= organization.website %>">Website</a>
+              <a href="http://www.habitatoc.org/Volunteer">Volunteer</a>
+              <a href="http://www.habitatoc.org/Donate">Donate</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+
+<% if current_user %>
 <table>
   <thead>
     <tr>
@@ -19,19 +40,36 @@
     </tr>
   </thead>
 
+<h1>Temp org index</h1>
   <tbody>
     <% @organizations.each do |organization| %>
+    <!-- <div class="orgcontainer">
+      <div class="orgname"></div>
+      <div class="orgurl"></div>
+      <div class="orglocation"></div>
+      <div class="orgstatus">
+        scope:
+        nonprofit status:
+        donation type:
+        volunteers?:
+      </div>
+      <div class="orgdescription"> -->
+
+      </div>
+    </div>
       <tr>
         <td><%= organization.name %></td>
         <td><%= organization.website %></td>
         <td><%= organization.phone %></td>
+
         <td><%= organization.address %></td>
+        <td><%#= organization.address2 %></td>
         <td><%= organization.city %></td>
         <td><%= organization.state %></td>
         <td><%= organization.zipcode %></td>
         <td><%= organization.description %></td>
-        <td><%= organization.volunteers %></td>
-        <td><%= organization.donations %></td>
+        <td><%#= organization.volunteers %></td>
+        <td><%#= organization.donations %></td>
         <td><%= link_to 'Show', organization %></td>
         <td><%= link_to 'Edit', edit_organization_path(organization) %></td>
         <td><%= link_to 'Destroy', organization, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -39,7 +77,5 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-
 <%= link_to 'New Organization', new_organization_path %>
+<% end %>
