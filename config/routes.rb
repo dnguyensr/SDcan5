@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :organizations
-  root to: 'home#index'
-  
+  root to: 'pages#index'
+  get 'aboutus' => 'pages#aboutus'
+  get 'volunteer' => 'pages#volunteer'
+  get 'donate' => 'pages#donate'
+  get 'sitemap' => 'pages#sitemap'
+
   devise_for :users, controllers: {
      sessions: 'users/sessions'
    }
