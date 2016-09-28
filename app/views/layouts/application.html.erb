@@ -14,13 +14,22 @@
   <body>
     <nav class="brown">
       <div class="nav-wrapper container">
-        <a href="/" class="brand-logo right">Logo</a>
+        <!-- <a href="/" class="brand-logo right">Logo</a>
+        <a href="/" class="right">Login</a> -->
         <ul id="nav-mobile" class="left hide-on-med-and-down">
           <li><a href="/">Home</a></li>
           <li><a href="/organizations">Organizations</a></li>
           <li><a href="/volunteer">Volunteer</a></li>
           <li><a href="/donate">Donate</a></li>
           <li><a href="/aboutus">About Us</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <% if current_user%>
+            <li><a href="/users/sign_out/">Logout</a></li>
+          <% else %>
+            <li><a href="/users/sign_up">Register</a></li>
+            <li><a href="/users/sign_in">Login</a></li>
+          <% end %>
         </ul>
       </div>
     </nav>
